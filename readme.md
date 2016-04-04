@@ -1,9 +1,9 @@
-Watermelona
+ï»¿Watermelona
 ====
 
 ObjectBased Publisher/Subscriber implementation. (for Unity)
 <br>
-¾Û ³»¿¡¼­ ¹ß»ýÇÏ´Â °¢Á¾ ÀÌº¥Æ®µéÀ» ´Ù¼öÀÇ °ÔÀÓ ¿ÀºêÁ§Æ®¿¡ Àü´ÞÇÒ ¼ö ÀÖµµ·Ï ÇØÁÝ´Ï´Ù.
+ì•±ì—ì„œ ë°œìƒí•˜ëŠ” ì´ë²¤íŠ¸ë“¤ì„ ê° ì˜¤ë¸Œì íŠ¸ë“¤ì—ê²Œ ê°„ë‹¨í•˜ê²¢ì „ë‹¬í•˜ê³  êµ¬ë…í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
 Usage
 ----
