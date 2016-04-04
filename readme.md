@@ -6,10 +6,10 @@ ObjectBased Publisher/Subscriber implementation. (for Unity)
 
 Usage
 ----
-¾Æ·¡ÀÇ ¿¹Á¦´Â °ÔÀÓ¿¡¼­ ÆÐÅ¶À» ¹Þ¾Æ¼­ °¢ ¿ÀºêÁ§Æ®¿¡°Ô Àü¼ÛÇÏ°í,<br>
-°¢ ¿ÀºêÁ§Æ®µéÀº ÆÐÅ¶À» ¹Þ¾Æ¼­ Ã³¸®ÇÏ´Â °£´ÜÇÑ ¿¹Á¦¸¦ º¸¿©ÁÝ´Ï´Ù.
+ì•„ëž˜ì˜ ì˜ˆì œëŠ” ê²Œìž„ì—ì„œ íŒ¨í‚·ì„ ë°›ì•„ì„œ ê° ì˜¤ë¸Œì íŠ¸ì—ê²Œ ì „ì†¡í•˜ê³ ,<br>
+ê° ì˜¤ë¸Œì íŠ¸ë“¤ì€ íŒ¨í‚·ì„ ë°›ì•„ì„œ ì²˜ë¦¬í•˜ëŠ” ê°„ë‹¨í•œ ì˜ˆì œë¥¼ ë³´ì—¬ì¤ë‹ˆë‹¤.
 <br><br>
-`Subscribe`¸¦ ÁöÁ¤ÇÏ±â¸¸ ÇÏ¸é ÀÚµ¿À¸·Î ±¸µ¶µÇ±â ¶§¹®¿¡, ÆÐÅ¶À» ¹Þ¾Æ¼­ `switch~case`·Î Å¸ÀÔÀ» ³ª´« ÈÄ, ¾Ë¸ÂÀº ¿ÀºêÁ§Æ®µéÀ» °ñ¶ó¼­ °¢°¢ ´Ù½Ã »Ñ·ÁÁÖ´Â ¹ø°Å·Î¿î ·ÎÁ÷ÀÌ ÇÊ¿ä ¾ø½À´Ï´Ù.
+`Subscribe`ë¥¼ ì§€ì •í•˜ê¸°ë§Œ í•˜ë©´ ìžë™ìœ¼ë¡œ êµ¬ë…ë˜ê¸° ë•Œë¬¸ì—, íŒ¨í‚·ì„ ë°›ì•„ì„œ `switch~case`ë¡œ íƒ€ìž…ì„ ë‚˜ëˆˆ í›„, ì•Œë§žì€ ì˜¤ë¸Œì íŠ¸ë“¤ì„ ê³¨ë¼ì„œ ê°ê° ë‹¤ì‹œ ë¿Œë ¤ì£¼ëŠ” ë²ˆê±°ë¡œìš´ ë¡œì§ì´ í•„ìš” ì—†ìŠµë‹ˆë‹¤.
 
 __Network.cs__
 ```c#
@@ -21,11 +21,11 @@ void PacketReceivedFromNetwork(IPacket packet)
 
 __GameState.cs__
 ```c#
-// °ÔÀÓ Àü¿ªÀûÀ¸·Î »ç¿ëÇÏ´Â »óÅÂ ÀúÀå¼ÒÀÔ´Ï´Ù.
-// ÅÏ ½ÃÀÛ/Á¾·á ÆÐÅ¶À» ¹Þ¾Æ¼­ ÇöÀç ÅÏ »óÅÂ¸¦ ÀúÀåÇÕ´Ï´Ù.
-class GameState : Watermelon.GameObject
+// ê²Œìž„ ì „ì—­ì ìœ¼ë¡œ ì‚¬ìš©í•˜ëŠ” ìƒíƒœ ì €ìž¥ì†Œìž…ë‹ˆë‹¤.
+// í„´ ì‹œìž‘/ì¢…ë£Œ íŒ¨í‚·ì„ ë°›ì•„ì„œ í˜„ìž¬ í„´ ìƒíƒœë¥¼ ì €ìž¥í•©ë‹ˆë‹¤.
+class GameState : Watermelona.GameObject
 {
-  // ¸Þ¼Òµå¿¡ ¼­ºê½ºÅ©¶óÀÌ¹ö¸¦ ÁöÁ¤ÇÏ¸é ÀÚµ¿À¸·Î µî·ÏµË´Ï´Ù.
+  // ë©”ì†Œë“œì— ì„œë¸ŒìŠ¤í¬ë¼ì´ë²„ë¥¼ ì§€ì •í•˜ë©´ ìžë™ìœ¼ë¡œ ë“±ë¡ë©ë‹ˆë‹¤.
   [Subscriber(typeof(TurnStart))]
   public void OnTurnStart(TurnStart packet)
   {
@@ -42,9 +42,9 @@ class GameState : Watermelon.GameObject
 
 __TurnIndicatorUI.cs__
 ```c#
-// ´©±¸ÀÇ ÅÏÀÎÁö ¾Ë·ÁÁÖ´Â UI ¿ÀºêÁ§Æ®ÀÔ´Ï´Ù.
-// ÅÏ ½ÃÀÛ/Á¾·á ÆÐÅ¶À» ¹Þ¾Æ¼­ UI¸¦ Ç¥½ÃÇÏ°í ¼û±é´Ï´Ù.
-class TurnIndicatorUI : Watermelon.GameObject
+// ëˆ„êµ¬ì˜ í„´ì¸ì§€ ì•Œë ¤ì£¼ëŠ” UI ì˜¤ë¸Œì íŠ¸ìž…ë‹ˆë‹¤.
+// í„´ ì‹œìž‘/ì¢…ë£Œ íŒ¨í‚·ì„ ë°›ì•„ì„œ UIë¥¼ í‘œì‹œí•˜ê³  ìˆ¨ê¹ë‹ˆë‹¤.
+class TurnIndicatorUI : Watermelona.GameObject
 {
   [Subscriber(typeof(TurnStart))]
   public void OnTurnStart(TurnStart packet)
