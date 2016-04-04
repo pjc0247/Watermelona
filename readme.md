@@ -3,6 +3,7 @@ Watermelona
 
 ObjectBased Publisher/Subscriber implementation. (for Unity)
 <br>
+앱 내에서 발생하는 각종 이벤트들을 다수의 게임 오브젝트에 전달할 수 있도록 해줍니다.
 
 Usage
 ----
