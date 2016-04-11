@@ -5,6 +5,9 @@ ObjectBased Publisher/Subscriber implementation. (for Unity)
 <br>
 앱에서 발생하는 이벤트들을 각 오브젝트들에게 간단하겢전달하고 구독할 수 있습니다.
 
+<br>
+http://pjc0247.tistory.com/81
+
 Usage
 ----
 아래의 예제는 게임에서 패킷을 받아서 각 오브젝트에게 전송하고,<br>
